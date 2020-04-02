@@ -220,7 +220,7 @@ means <- subjectActivityNew[,meanColumns|!(meanColumns|stdColumns)]
 stds <- subjectActivityNew[,stdColumns|!(meanColumns|stdColumns)]
 names(means) <- gsub("-mean\\(\\)","",names(means))
 names(stds) <- gsub("-std\\(\\)","",names(stds))
-subjectActivityNew <- bind_rows("mean" = means,"std" = stds,.id="function_name")
+subjectActivityNew <- bind_rows("mean" = means,"standard_deviation" = stds,.id="function_name")
 if(freeMemory)
   rm(means,stds)
 
